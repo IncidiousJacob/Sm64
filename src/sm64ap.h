@@ -85,6 +85,13 @@ extern "C" {
 
 #define SM64AP_NUM_ABILITIES 11
 #define SM64AP_NUM_PAINTING_LOCKS 15
+#define SM64AP_ID_BSBITDW_UNLOCK (SM64AP_ID_OFFSET + 1777)
+#define SM64AP_ID_BSBITFS_UNLOCK (SM64AP_ID_OFFSET + 1778)
+#define SM64AP_ID_BSBITS_UNLOCK  (SM64AP_ID_OFFSET + 1779)
+
+#define SM64AP_ID_BBBITDW_UNLOCK (SM64AP_ID_OFFSET + 1780)
+#define SM64AP_ID_BBBITFS_UNLOCK (SM64AP_ID_OFFSET + 1781)
+#define SM64AP_ID_BBBITS_UNLOCK  (SM64AP_ID_OFFSET + 1782)
 
 enum {
     SM64AP_FEATURE_BOB_KING_BOBOMB,
@@ -363,6 +370,13 @@ AP_EXTERN_C int SM64AP_CheatItemCount();
 AP_EXTERN_C const char *SM64AP_CheatItemName(int);
 AP_EXTERN_C bool SM64AP_CheatItemEnabled(int);
 AP_EXTERN_C void SM64AP_CheatSetItemEnabled(int, bool);
+AP_EXTERN_C bool sm64_have_bitdw_bowser;
+AP_EXTERN_C bool sm64_have_bitfs_bowser;
+AP_EXTERN_C bool sm64_have_bits_bowser;
+
+AP_EXTERN_C bool sm64_have_bitdw_bombs;
+AP_EXTERN_C bool sm64_have_bitfs_bombs;
+AP_EXTERN_C bool sm64_have_bits_bombs;
 
 // Local Moves
 AP_EXTERN_C bool SM64AP_CanDoubleJumpForArea(int);
