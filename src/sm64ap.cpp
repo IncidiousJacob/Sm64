@@ -82,6 +82,13 @@ bool sm64_have_cannon[15];
 bool sm64_have_painting[NUM_PAINTING_LOCKS];
 bool sm64_have_thi_tiny_painting = false;
 bool sm64_painting_rando_enabled = false;
+bool sm64_have_bitdw_bowser = false;
+bool sm64_have_bitfs_bowser = false;
+bool sm64_have_bits_bowser = false;
+
+bool sm64_have_bitdw_bombs = false;
+bool sm64_have_bitfs_bombs = false;
+bool sm64_have_bits_bombs = false;
 int sm64_completion_type = 0;
 std::bitset<SM64AP_NUM_ABILITIES> sm64_have_abilities;
 std::bitset<SM64AP_NUM_LEVEL_MOVE_AREAS * SM64AP_NUM_LEVEL_MOVES> sm64_have_level_moves;
@@ -547,6 +554,29 @@ void SM64AP_RecvItem(int64_t idx, bool notify) {
             break;
         case SM64AP_ID_FEATURE(0) ... SM64AP_ID_FEATURE(SM64AP_NUM_FEATURES-1):
             sm64_have_features[idx-(SM64AP_ID_FEATURE(0))] = true;
+            break;
+        case SM64AP_ID_BSBITDW_UNLOCK:
+            sm64_have_bitdw_bowser = true;
+            break;
+
+        case SM64AP_ID_BSBITFS_UNLOCK:
+            sm64_have_bitfs_bowser = true;
+            break;
+
+        case SM64AP_ID_BSBITS_UNLOCK:
+            sm64_have_bits_bowser = true;
+            break;
+
+        case SM64AP_ID_BBBITDW_UNLOCK:
+            sm64_have_bitdw_bombs = true;
+            break;
+
+        case SM64AP_ID_BBBITFS_UNLOCK:
+            sm64_have_bitfs_bombs = true;
+            break;
+
+        case SM64AP_ID_BBBITS_UNLOCK:
+            sm64_have_bits_bombs = true;
             break;
     }
 }
@@ -1840,6 +1870,13 @@ void SM64AP_ResetItems() {
     sm64_have_wingcap = false;
     sm64_have_metalcap = false;
     sm64_have_vanishcap = false;
+    sm64_have_bitdw_bowser = false;
+    sm64_have_bitfs_bowser = false;
+    sm64_have_bits_bowser = false;
+
+    sm64_have_bitdw_bombs = false;
+    sm64_have_bitfs_bombs = false;
+    sm64_have_bits_bombs = false;
     starsCollected = 0;
 
     AP_SetServerDataRequest moat_request;
