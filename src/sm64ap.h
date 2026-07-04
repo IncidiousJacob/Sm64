@@ -397,6 +397,9 @@ AP_EXTERN_C bool SM64AP_CanGroundPound();
 AP_EXTERN_C bool SM64AP_CanKick();
 AP_EXTERN_C bool SM64AP_CanClimb();
 AP_EXTERN_C bool SM64AP_CanLedgeGrab();
+AP_EXTERN_C bool SM64AP_CanPunch();
+AP_EXTERN_C bool SM64AP_CanGrab();
+AP_EXTERN_C bool SM64AP_CanSwim();
 
 // Send Item
 AP_EXTERN_C int SM64AP_BoxLocationId(int);
