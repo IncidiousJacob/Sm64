@@ -3297,6 +3297,12 @@ static int SM64AP_LevelMoveForAbility(int ability) {
             return SM64AP_LEVEL_MOVE_CLIMB;
         case SM64AP_ID_LEDGEGRAB - SM64AP_ABILITY_OFFSET:
             return SM64AP_LEVEL_MOVE_LEDGE_GRAB;
+        case SM64AP_ID_PUNCH - SM64AP_ABILITY_OFFSET:
+            return SM64AP_LEVEL_MOVE_PUNCH;
+        case SM64AP_ID_GRAB - SM64AP_ABILITY_OFFSET:
+            return SM64AP_LEVEL_MOVE_GRAB;
+        case SM64AP_ID_SWIM - SM64AP_ABILITY_OFFSET:
+            return SM64AP_LEVEL_MOVE_SWIM;
     }
 
     return -1;
@@ -3376,6 +3382,18 @@ bool SM64AP_CanClimb() {
 
 bool SM64AP_CanLedgeGrab() {
     return SM64AP_HaveAbilityForCurrentLevel(SM64AP_ID_LEDGEGRAB - SM64AP_ABILITY_OFFSET);
+}
+
+bool SM64AP_CanPunch() {
+    return SM64AP_HaveAbilityForCurrentLevel(SM64AP_ID_PUNCH - SM64AP_ABILITY_OFFSET);
+}
+
+bool SM64AP_CanGrab() {
+    return SM64AP_HaveAbilityForCurrentLevel(SM64AP_ID_GRAB - SM64AP_ABILITY_OFFSET);
+}
+
+bool SM64AP_CanSwim() {
+    return SM64AP_HaveAbilityForCurrentLevel(SM64AP_ID_SWIM - SM64AP_ABILITY_OFFSET);
 }
 
 
